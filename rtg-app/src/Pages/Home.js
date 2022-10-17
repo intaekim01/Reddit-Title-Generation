@@ -2,7 +2,11 @@
 function Home() {
 
     return (
-        <h1>Homepage content here</h1>
+        <div className="container-fluid page">
+            <div className="container text-center">
+                <h1>Homepage content here</h1>
+            </div>
+        </div>
     )
 
 };

@@ -11,13 +11,11 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <div className='col-lg p-4'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/placeholder' element={<Placeholder />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/placeholder' element={<Placeholder />} />
+      </Routes>
       {/* <About></About> */}
     </>
     
