@@ -5,10 +5,9 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Placeholder from './Pages/Placeholder';
 import { Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
-  const [text, setText] = useState("")
 
   return (
    
