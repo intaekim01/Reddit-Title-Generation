@@ -1,11 +1,21 @@
+import RichText from '../Components/RichText';
+import React from "react";
 
 function Home() {
 
     return (
         <div className="container-fluid page">
-            <div className="container text-center">
-                <h1>Homepage content here</h1>
+
+            <div className='container p-4'>
+                <div>
+                    <p>Paste your post</p>
+                    <hr></hr>
+                </div>
+                <div>
+                <RichText></RichText>
             </div>
+            </div>
+            
         </div>
     )
 
