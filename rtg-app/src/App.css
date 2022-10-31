@@ -1,19 +1,20 @@
-.App {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* text-align: center; */
-}
-
-.editor {
-  margin-right: 10em;
-}
-
 .ck-editor__editable_inline {
   min-height: 500px;
+  max-height: 50vh;
+  min-width: 100%;
 }
 
 .page {
   background-color: #DAE0E6;
-  height: 100vh;
+  min-height: 100vh;
 }
 
+.btn-primary {
+    background-color: #FF4500 !important;
+    border-color: #FF4500 !important;
+}
+
+.btn-primary:hover {
+  background-color: #E53900 !important;
+  border-color: #E53900 !important;
+}
