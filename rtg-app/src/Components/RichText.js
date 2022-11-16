@@ -3,7 +3,6 @@ import {CKEditor} from "@ckeditor/ckeditor5-react";
 import parse from "html-react-parser";
 
 function RichText({post, setPost}) {
-    console.log('Richtext component rendering...')
     
     return (
         <div className='editor'>
