@@ -11,7 +11,10 @@ content = "Take your machine learning model out of your desk drawer and show its
 
 
 def gen_title(content):
-    post = content
-    outputs = tg_model.blurr_generate(post, early_stopping=False, num_return_sequences=3, min_length=3, max_length=20)
+    result_list = []
 
-    return list(outputs[0].values())[0]
+    for title_length in [10, 20, 30]:
+        outputs = tg_model.blurr_generate(content, early_stopping=False, num_return_sequences=3, min_length=3, max_length=title_length)
+        result_list.append(list(outputs[0].values())[0])
+
+    return result_list
