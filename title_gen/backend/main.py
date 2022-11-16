@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import gunicorn
 import uvicorn
 from pydantic import BaseModel
-from model import gen_title
+from bartModel import gen_title
 
 app = FastAPI()
 
