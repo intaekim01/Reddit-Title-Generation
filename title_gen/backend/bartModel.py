@@ -3,12 +3,8 @@ from fastai import *
 from blurr import *
 from fastbook import load_learner
 
-# import transformers
 
 tg_model = load_learner('models/bart_reddit_summary_production.pkl')
-
-content = "Take your machine learning model out of your desk drawer and show its benefit to the world through a simple API using AWS Lambda and API gateway. This tutorial will bridge the gap between having a machine learning model (e.g. in your Jupyter notebooks) and taking it to a level where others can benefit from it (i.e. through an API)."
-
 
 def gen_title(content):
     result_list = []
