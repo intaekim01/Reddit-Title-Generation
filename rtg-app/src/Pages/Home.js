@@ -3,30 +3,62 @@ import React, { useState } from "react";
 
 function Home({post, setPost}) {
 
-    const [titles, setTitles] = useState({message: 'Generated titles will populate here'});
+    const [titles, setTitles] = useState(['', '', '']);
     const [err, setErr] = useState("");
 
-    const handleClick = async () => {
-        try {
-            const response = await fetch('https://qf2lscafo5.execute-api.us-west-2.amazonaws.com/test/titlegeneration?transactionId=5&type=RETURN&amount=226k', {
-                method: 'GET',
-                headers: {
-                    Accept: 'application/json',
-                },
-            });
+    function convertToPlain(html){
 
-            if (!response.ok) {
-                throw new Error(`Error! status: ${response.status}`);
+        // Create a new div element
+        var tempDivElement = document.createElement("div");
+        
+        // Set the HTML content with the given value
+        tempDivElement.innerHTML = html;
+        
+        // Retrieve the text property of the element 
+        return tempDivElement.textContent || tempDivElement.innerText || "";
+    }
+
+    function cleanString(input) {
+        var output = "";
+        for (var i=0; i<input.length; i++) {
+            if (input.charCodeAt(i) <= 127) {
+                output += input.charAt(i);
             }
+        }
+        return output;
+    }
 
-            const result = await response.json();
+    const handleClick = async () => {
 
-            setTitles(result);
-
+        try {
+            if (typeof post === 'string' && post.length > 0) {
+                let text = convertToPlain(post)
+                let text_to_utf8 = cleanString(text)
+                console.log('text_to_utf8', text_to_utf8)
+                const requestOptions = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ content: text_to_utf8 })
+                };
+                let url = new URL('http://127.0.0.1:8000/generate_titles')
+                const response = await fetch(url, requestOptions)
+    
+                if (!response.ok) {
+                    throw new Error(`Error! status: ${response.status}`);
+                }
+    
+                const result = await response.json();
+                console.log('result', result)
+                
+                setTitles(result);
+    
+                console.log('result after setTitles', result)
+            }
+        
         } catch (err) {
             setErr(err.message);
         }; 
-
+                
     } 
 
     return (
@@ -42,11 +74,9 @@ function Home({post, setPost}) {
                     <div className='row'>
                         <RichText post={post} setPost={setPost}></RichText>
                     </div>
-                    <div className='p-3 text-center'>
+                    <div className='p-3'>
 
-                        <button type="button" className="btn btn-primary" onClick={handleClick} data-bs-toggle="modal" data-bs-target="#titlesModal">
-                            Generate Titles!
-                        </button>
+                        
 
                         
                         <div className="modal fade" id="titlesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="titlesModalLabel" aria-hidden="true">
@@ -60,19 +90,19 @@ function Home({post, setPost}) {
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault1">
-                                                {titles.message}
+                                                {titles[0]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault2">
-                                                {titles.message}
+                                                {titles[1]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault3">
-                                                {titles.message}
+                                                {titles[2]}
                                             </label>
                                         </div>
 
@@ -85,6 +115,13 @@ function Home({post, setPost}) {
                             </div>
                         </div>
                     </div>
+
+                    <div className='d-flex justify-content-center'>
+                        <button type="button" className="btn btn-primary " onClick={handleClick} data-bs-toggle="modal" data-bs-target="#titlesModal">
+                            Generate Titles!
+                        </button>
+                    </div>
+
                 </div>
                 
             </div>
