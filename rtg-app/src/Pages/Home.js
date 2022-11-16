@@ -34,7 +34,6 @@ function Home({post, setPost}) {
             if (typeof post === 'string' && post.length > 0) {
                 let text = convertToPlain(post)
                 let text_to_utf8 = cleanString(text)
-                console.log('text_to_utf8', text_to_utf8)
                 const requestOptions = {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -48,11 +47,9 @@ function Home({post, setPost}) {
                 }
     
                 const result = await response.json();
-                console.log('result', result)
                 
                 setTitles(result);
     
-                console.log('result after setTitles', result)
             }
         
         } catch (err) {
@@ -76,9 +73,6 @@ function Home({post, setPost}) {
                     </div>
                     <div className='p-3'>
 
-                        
-
-                        
                         <div className="modal fade" id="titlesModal" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="titlesModalLabel" aria-hidden="true">
                             <div className="modal-dialog modal-dialog-centered">
                                 <div className="modal-content">
@@ -90,19 +84,19 @@ function Home({post, setPost}) {
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault1">
-                                                {titles[0]}
+                                                {titles[0][0]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault2">
-                                                {titles[1]}
+                                                {titles[1][0]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
                                             <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault3">
-                                                {titles[2]}
+                                                {titles[2][0]}
                                             </label>
                                         </div>
 
