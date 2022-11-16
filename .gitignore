@@ -1,1 +1,5 @@
 /venv
+title_gen/backend/venv
+title_gen/backend/__pycache__
+.ipynb_checkpoints
+.gitignore
