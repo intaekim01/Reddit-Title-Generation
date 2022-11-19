@@ -39,7 +39,7 @@ function Home({post, setPost}) {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ content: text_to_utf8 })
                 };
-                let url = new URL('http://35.88.248.227/generate_titles')
+                let url = new URL('https://35.88.248.227/generate_titles')
                 const response = await fetch(url, requestOptions)
     
                 if (!response.ok) {
