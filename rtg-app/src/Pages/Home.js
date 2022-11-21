@@ -36,9 +36,11 @@ function Home({post, setPost}) {
                 let text_to_utf8 = cleanString(text)
                 const requestOptions = {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 'Content-Type': 'application/json',
+                                'Access-Control-Allow-Origin': '*' },
                     body: JSON.stringify({ content: text_to_utf8 })
                 };
+                console.log('generating titles through https resource...')
                 let url = new URL('https://35.88.248.227/generate_titles')
                 const response = await fetch(url, requestOptions)
     
