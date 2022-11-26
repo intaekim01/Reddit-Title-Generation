@@ -37,11 +37,11 @@ function Home({post, setPost}) {
                 const requestOptions = {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json',
-                                'Access-Control-Allow-Origin': '*' },
+                    },
                     body: JSON.stringify({ content: text_to_utf8 })
                 };
                 console.log('generating titles through https resource...')
-                let url = new URL('https://35.88.248.227/generate_titles')
+                let url = new URL('https://inference.title-ai.com/generate_titles')
                 const response = await fetch(url, requestOptions)
     
                 if (!response.ok) {
