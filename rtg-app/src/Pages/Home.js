@@ -1,10 +1,22 @@
 import RichText from '../Components/RichText';
 import React, { useState } from "react";
+import copy from "copy-to-clipboard";
+import { Alert } from 'bootstrap';
 
 function Home({post, setPost}) {
 
     const [titles, setTitles] = useState(['', '', '']);
     const [err, setErr] = useState("");
+    const [copyText, setCopyText] = useState('');
+
+    const handleCopyText = (e) => {
+        setCopyText(e.target.value);
+     } 
+     
+     const copyToClipboard = () => {
+        copy(copyText);
+        // alert(`You have copied "${copyText}"`);
+     }
 
     function convertToPlain(html){
 
@@ -83,19 +95,19 @@ function Home({post, setPost}) {
                                     </div>
                                     <div className="modal-body">
                                         <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></input>
+                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value={titles[0][0]} onChange={handleCopyText}></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault1">
                                                 {titles[0][0]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"></input>
+                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value={titles[1][0]} onChange={handleCopyText}></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault2">
                                                 {titles[1][0]}
                                             </label>
                                         </div>
                                         <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"></input>
+                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value={titles[2][0]} onChange={handleCopyText}></input>
                                             <label className="form-check-label d-flex" htmlFor="flexRadioDefault3">
                                                 {titles[2][0]}
                                             </label>
@@ -104,8 +116,9 @@ function Home({post, setPost}) {
                                     </div>
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" className="btn btn-primary"  data-bs-dismiss="modal">Copy</button>
+                                        <button type="button" className="btn btn-primary" id="copyButton" data-bs-dismiss="modal" onClick={copyToClipboard}>Copy</button>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
