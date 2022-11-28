@@ -1,21 +1,35 @@
 import RichText from '../Components/RichText';
 import React, { useState } from "react";
 import copy from "copy-to-clipboard";
-import { Alert } from 'bootstrap';
+import { Toast } from 'bootstrap';
+import IconV3 from "../Images/IconV3.png"; 
 
 function Home({post, setPost}) {
 
+    // setup State variables
     const [titles, setTitles] = useState(['', '', '']);
     const [err, setErr] = useState("");
     const [copyText, setCopyText] = useState('');
 
+    // initiale toast component to show
+    const toastTrigger = document.getElementById('copyButton')
+    const toastTitleCopied = document.getElementById('copyToast')
+    if (toastTrigger) {
+        toastTrigger.addEventListener('click', () => {
+            const toast = new Toast(toastTitleCopied)
+    
+        toast.show()
+      })
+    }
+
+    // sets copyText State to selected title
     const handleCopyText = (e) => {
         setCopyText(e.target.value);
      } 
-     
-     const copyToClipboard = () => {
+    
+    //  copies copyText State to clipboard
+    const copyToClipboard = () => {
         copy(copyText);
-        // alert(`You have copied "${copyText}"`);
      }
 
     function convertToPlain(html){
@@ -118,7 +132,7 @@ function Home({post, setPost}) {
                                         <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
                                         <button type="button" className="btn btn-primary" id="copyButton" data-bs-dismiss="modal" onClick={copyToClipboard}>Copy</button>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -128,6 +142,17 @@ function Home({post, setPost}) {
                         <button type="button" className="btn btn-primary " onClick={handleClick} data-bs-toggle="modal" data-bs-target="#titlesModal">
                             Generate Titles!
                         </button>
+                    </div>
+
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                        <div id="copyToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <img className="IconV3.png rounded me-2" src={IconV3} width="17" height="17"></img>
+                                <strong class="me-auto"></strong>
+                                <strong>title copied!</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
