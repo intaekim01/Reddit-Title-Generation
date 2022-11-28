@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { Toast } from 'bootstrap';
 import IconV3 from "../Images/IconV3.png";
-import { ThreeCircles } from 'react-loader-spinner'
+import { ThreeCircles, Oval } from 'react-loader-spinner'
 
 function Home({post, setPost}) {
 
@@ -119,13 +119,17 @@ function Home({post, setPost}) {
                                     <div className="modal-body">
                                         {loading && 
                                         <div className='d-flex justify-content-center'>
-                                            <ThreeCircles
+                                            <Oval
                                             width="100"
                                             height="100"
-                                            color='black'
+                                            color='#FF4500'
+                                            // color='#6C757D'
+                                            // color='black'
                                             ariaLabel='loading'
-                                            // innerCircleColor="#FF4500"
-                                            middleCircleColor="#FF4500"
+                                            // innerCircleColor="black"
+                                            // middleCircleColor="#FF4500"
+                                            secondaryColor="#6C757D"
+
                                             />
                                         </div>
                                         
