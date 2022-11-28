@@ -2,7 +2,8 @@ import RichText from '../Components/RichText';
 import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { Toast } from 'bootstrap';
-import IconV3 from "../Images/IconV3.png"; 
+import IconV3 from "../Images/IconV3.png";
+import { ThreeCircles } from 'react-loader-spinner'
 
 function Home({post, setPost}) {
 
@@ -10,6 +11,7 @@ function Home({post, setPost}) {
     const [titles, setTitles] = useState(['', '', '']);
     const [err, setErr] = useState("");
     const [copyText, setCopyText] = useState('');
+    const [loading, setLoading] = useState(false);
 
     // initiale toast component to show
     const toastTrigger = document.getElementById('copyButton')
@@ -30,6 +32,7 @@ function Home({post, setPost}) {
     //  copies copyText State to clipboard
     const copyToClipboard = () => {
         copy(copyText);
+        setTitles(['', '', ''])
      }
 
     function convertToPlain(html){
@@ -55,7 +58,7 @@ function Home({post, setPost}) {
     }
 
     const handleClick = async () => {
-
+        setLoading(true);
         try {
             if (typeof post === 'string' && post.length > 0) {
                 let text = convertToPlain(post)
@@ -76,6 +79,7 @@ function Home({post, setPost}) {
     
                 const result = await response.json();
                 setTitles(result);
+                setLoading(false);
     
             }
         
@@ -84,6 +88,10 @@ function Home({post, setPost}) {
         }; 
                 
     } 
+
+    const dismissClick = () => {
+        setTitles(['', '', ''])
+    }
 
     return (
         <div className="container-fluid page">
@@ -105,31 +113,48 @@ function Home({post, setPost}) {
                                 <div className="modal-content">
                                     <div className="modal-header">
                                         <h1 className="modal-title fs-5" id="titlesModalLabel">Select a title</h1>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" className="btn-close" onClick={dismissClick} data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
+                                    
                                     <div className="modal-body">
-                                        <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value={titles[0][0]} onChange={handleCopyText}></input>
-                                            <label className="form-check-label d-flex" htmlFor="flexRadioDefault1">
-                                                {titles[0][0]}
-                                            </label>
+                                        {loading && 
+                                        <div className='d-flex justify-content-center'>
+                                            <ThreeCircles
+                                            width="100"
+                                            height="100"
+                                            color='black'
+                                            ariaLabel='loading'
+                                            // innerCircleColor="#FF4500"
+                                            middleCircleColor="#FF4500"
+                                            />
                                         </div>
-                                        <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value={titles[1][0]} onChange={handleCopyText}></input>
-                                            <label className="form-check-label d-flex" htmlFor="flexRadioDefault2">
-                                                {titles[1][0]}
-                                            </label>
+                                        
+                                        }
+                                        {!loading && 
+                                        <div>
+                                            <div className="form-check py-2">
+                                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value={titles[0][0]} onChange={handleCopyText}></input>
+                                                <label className="form-check-label d-flex" htmlFor="flexRadioDefault1">
+                                                    {titles[0][0]}
+                                                </label>
+                                            </div>
+                                            <div className="form-check py-2">
+                                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value={titles[1][0]} onChange={handleCopyText}></input>
+                                                <label className="form-check-label d-flex" htmlFor="flexRadioDefault2">
+                                                    {titles[1][0]}
+                                                </label>
+                                            </div>
+                                            <div className="form-check py-2">
+                                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value={titles[2][0]} onChange={handleCopyText}></input>
+                                                <label className="form-check-label d-flex" htmlFor="flexRadioDefault3">
+                                                    {titles[2][0]}
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div className="form-check py-2">
-                                            <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" value={titles[2][0]} onChange={handleCopyText}></input>
-                                            <label className="form-check-label d-flex" htmlFor="flexRadioDefault3">
-                                                {titles[2][0]}
-                                            </label>
-                                        </div>
-
+                                        }
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" className="btn btn-outline-secondary" onClick={dismissClick} data-bs-dismiss="modal">Cancel</button>
                                         <button type="button" className="btn btn-primary" id="copyButton" data-bs-dismiss="modal" onClick={copyToClipboard}>Copy</button>
                                     </div>
 
@@ -147,7 +172,7 @@ function Home({post, setPost}) {
                     <div class="toast-container position-fixed bottom-0 end-0 p-3">
                         <div id="copyToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
-                                <img className="IconV3.png rounded me-2" src={IconV3} width="17" height="17"></img>
+                                <img className="IconV3.png rounded me-2" src={IconV3} width="17" height="17" alt=''></img>
                                 <strong class="me-auto"></strong>
                                 <strong>title copied!</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
