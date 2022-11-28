@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { Toast } from 'bootstrap';
 import IconV3 from "../Images/IconV3.png";
-import { ThreeCircles, Oval } from 'react-loader-spinner'
+import { Oval } from 'react-loader-spinner'
+// import { ThreeCircles, Oval } from 'react-loader-spinner'
 
 function Home({post, setPost}) {
 

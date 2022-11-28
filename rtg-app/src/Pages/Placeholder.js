@@ -1,6 +1,3 @@
-import { Toast } from 'bootstrap';
-import IconV3 from "../Images/IconV3.png"; 
-import { ThreeCircles } from 'react-loader-spinner'
 
 function Placeholder() {
 
