@@ -104,7 +104,7 @@ function Home({post, setPost}) {
                         <p>Paste your post</p>
                         <hr></hr>
                     </div>
-                    <div className='row'>
+                    <div className=''>
                         <RichText post={post} setPost={setPost}></RichText>
                     </div>
                     <div className='p-3'>
