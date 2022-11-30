@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import copy from "copy-to-clipboard";
 import { Toast } from 'bootstrap';
 import IconV3 from "../Images/IconV3.png";
-import { Oval } from 'react-loader-spinner'
-// import { ThreeCircles, Oval } from 'react-loader-spinner'
+import { Oval } from 'react-loader-spinner';
 
 function Home({post, setPost}) {
 
@@ -88,10 +87,27 @@ function Home({post, setPost}) {
             setErr(err.message);
         }; 
                 
-    } 
+    }
 
     const dismissClick = () => {
         setTitles(['', '', ''])
+    }
+
+    const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    const regenerateClick = async () => {
+        setLoading(true);
+        await delay(2000);
+        let titleArray = titles
+
+        titleArray.map(arr => {
+            arr.push(arr.shift());
+            return arr
+        })
+
+        setTitles(titleArray);
+        setLoading(false);
+
     }
 
     return (
@@ -124,13 +140,8 @@ function Home({post, setPost}) {
                                             width="100"
                                             height="100"
                                             color='#FF4500'
-                                            // color='#6C757D'
-                                            // color='black'
                                             ariaLabel='loading'
-                                            // innerCircleColor="black"
-                                            // middleCircleColor="#FF4500"
                                             secondaryColor="#6C757D"
-
                                             />
                                         </div>
                                         
@@ -155,6 +166,9 @@ function Home({post, setPost}) {
                                                     {titles[2][0]}
                                                 </label>
                                             </div>
+                                            <div className='col text-center pt-4'>
+                                                <button type="button" className="btn btn-link" onClick={regenerateClick}>Don't like? Regenerate three more</button>
+                                            </div>
                                         </div>
                                         }
                                     </div>
@@ -174,13 +188,13 @@ function Home({post, setPost}) {
                         </button>
                     </div>
 
-                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                        <div id="copyToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                            <div class="toast-header">
+                    <div className="toast-container position-fixed bottom-0 end-0 p-3">
+                        <div id="copyToast" className="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div className="toast-header">
                                 <img className="IconV3.png rounded me-2" src={IconV3} width="17" height="17" alt=''></img>
-                                <strong class="me-auto"></strong>
+                                <strong className="me-auto"></strong>
                                 <strong>title copied!</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                <button type="button" className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
