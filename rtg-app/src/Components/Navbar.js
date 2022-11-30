@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 
     return (
-        <nav className="navbar navbar-expand-lg background">
+        <nav className="navbar sticky-top navbar-expand-lg" style={{backgroundColor: "white"}}>
             <Link className="navbar-brand" to="/">
                 <img className="logoV3 p-3" src={logoV3} alt="Home" to="/"></img>
             </Link>
@@ -32,6 +32,7 @@ function Navbar() {
                 </ul>
             </div>
         </nav> 
+        
     )
 
 };
