@@ -1,11 +1,11 @@
 
-function Placeholder() {
+function Team() {
 
     return (
         <div className="container-fluid page">
 
             <div className="container text-center">
-                <h1>Placeholder content here</h1>
+                <h1>Team content here</h1>
             </div>
             
             
@@ -14,4 +14,4 @@ function Placeholder() {
 
 };
 
-export default Placeholder
+export default Team
