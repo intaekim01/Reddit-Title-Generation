@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 import Home from './Pages/Home';
 import TitleGenerator from './Pages/TitleGenerator';
 import About from './Pages/About';
@@ -23,6 +24,7 @@ function App() {
         <Route path='/team' element={<Team />} />
         <Route path='/coming_soon' element={<ComingSoon />} />
       </Routes>
+      <Footer></Footer>
     </>
     
   );
