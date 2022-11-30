@@ -18,3 +18,15 @@
   background-color: #E53900 !important;
   border-color: #E53900 !important;
 }
+
+.btn-outline-primary {
+  /* background-color: #000 !important; */
+  border-color: #FF4500 !important;
+  color: black !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #E53900 !important;
+  border-color: #E53900 !important;
+  color: white !important;
+}
