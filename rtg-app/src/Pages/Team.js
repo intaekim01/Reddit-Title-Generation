@@ -14,22 +14,22 @@ function Team() {
                 </div>
                 
                 <div>
-                    <p><a href="https://www.ischool.berkeley.edu/people/joy-jiang#profile-main">Intae Kim</a></p>
+                    <p><a href="https://www.ischool.berkeley.edu/people/tae-kim">Intae Kim</a></p>
                     <ul>
                         <li>Contact: intaekim@ischool.berkeley.edu</li>
-                        <li>Employment: </li>
+                        <li>Employment: Data Scientist, IBM</li>
                     </ul>
-                    <p><a href="https://www.ischool.berkeley.edu/people/justine-schabel">George Rodriguez</a></p>
+                    <p><a href="https://www.ischool.berkeley.edu/people/george-rodriguez">George Rodriguez</a></p>
                     <ul>
                         <li>Contact: georgerodriguez@ischool.berkeley.edu</li>
-                        <li>Employement: </li>
+                        <li>Employment: </li>
                     </ul>
                     <p><a href="https://www.ischool.berkeley.edu/people/tymon-silva#profile-main">Tymon Silva</a></p>
                     <ul>
                         <li>Contact: tymon.silva@berkeley.edu</li>
                         <li>Employment: Industrial Engineer/Developer, Boeing</li>
                     </ul>
-                    <p><a href="https://www.ischool.berkeley.edu/people/tymon-silva#profile-main">Qi Yao</a></p>
+                    <p><a href="https://www.ischool.berkeley.edu/people/qi-yao">Qi Yao</a></p>
                     <ul>
                         <li>Contact: aliviny@berkeley.edu</li>
                         <li>Employment: </li>
