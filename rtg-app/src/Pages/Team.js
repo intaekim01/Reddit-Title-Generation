@@ -24,7 +24,7 @@ function Team() {
                                 <img className="Intae.png" src={Intae} style={{maxWidth: "200px", maxHeight: "200px"}} alt="..."/>
                             </div>
                             <div className="row">
-                                <p><a href="https://www.ischool.berkeley.edu/people/joy-jiang#profile-main">Intae Kim</a></p>
+                                <p><a href="https://www.ischool.berkeley.edu/people/tae-kim">Intae Kim</a></p>
                             </div>
                             <div className="row">
                                 <span>Contact: intaekim01@gmail.com</span>
@@ -39,7 +39,7 @@ function Team() {
                                 <img className="George.png" src={George} style={{maxWidth: "200px", maxHeight: "200px"}} alt="..."/>
                             </div>
                             <div className="row">
-                                <p><a href="https://www.ischool.berkeley.edu/people/justine-schabel">George Rodriguez</a></p>
+                                <p><a href="https://www.ischool.berkeley.edu/people/george-rodriguez">George Rodriguez</a></p>
                             </div>
                             <div className="row">
                                 <span>Contact: georgerodriguez@ischool.berkeley.edu</span>
@@ -73,7 +73,7 @@ function Team() {
                                 <img className="Qi.png" src={Qi} style={{maxWidth: "200px", maxHeight: "200px"}} alt="..."/>
                             </div>
                             <div className="row">
-                                <p><a href="https://www.ischool.berkeley.edu/people/tymon-silva#profile-main">Qi Yao</a></p>
+                                <p><a href="https://www.ischool.berkeley.edu/people/qi-yao">Qi Yao</a></p>
                             </div>
                             <div className="row">
                                 <span>Contact: aliviny@berkeley.edu</span>
