@@ -46,13 +46,13 @@ function About() {
             <div className="container-fluid" style={{backgroundColor: "#FF4500"}}>
                 <div className="row py-5">
 
-                    <div className="col-md-3 " style={{"min-height": "200"}}>
+                    <div className="col-md-3 " style={{minHeight: "200"}}>
                         <div className="text-center">
                             <h1>Motivation</h1>
                         </div>
                     </div>
 
-                    <div className="col-md-9" style={{"min-height": "200"}}>
+                    <div className="col-md-9" style={{minHeight: "200"}}>
                         <div className="">
                             <p>
                                 There were an estimated 430 million Reddit users monthly and 300 million posts in 2021. 
@@ -90,25 +90,25 @@ function About() {
                         <div className="d-flex col-sm-12 col-md-6 align-items-center">
                             <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="false">
                                 <div className="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                 </div>
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
-                                        <img className="example1.png" src={example1} class="d-block w-100" width="100%" height="100%" alt="..."/>
+                                        <img className="example1.png d-block w-100" src={example1} width="100%" height="100%" alt="..."/>
                                         <div className="carousel-caption d-none d-md-block">
                                             <h5 style={{color: "#FF4500"}}>sub-optimal title lengths</h5>
                                         </div>
                                     </div>
                                     <div className="carousel-item">
-                                        <img className="example2.png" src={example2} class="d-block w-100" width="100%" height="100%" alt="..."/>
+                                        <img className="example2.png d-block w-100" src={example2} width="100%" height="100%" alt="..."/>
                                         <div className="carousel-caption d-none d-md-block">
                                             <h5 style={{color: "#FF4500"}}>irrelevant title content</h5>
                                         </div>
                                     </div>
                                     <div className="carousel-item">
-                                        <img className="example1.png" src={example1} class="d-block w-100" width="100%" height="100%" alt="..."/>
+                                        <img className="example1.png d-block w-100" src={example1} width="100%" height="100%" alt="..."/>
                                         <div className="carousel-caption d-none d-md-block">
                                             <h5 style={{color: "#FF4500"}}>ineffective titles</h5>
                                         </div>
@@ -156,7 +156,7 @@ function About() {
 
                         <div className="col-sm-12 col-md-6">
                             <div className="row text-center ">
-                                <h4>BART<center><hr classname="d-flex text-center" style={{'max-width': "50%"}}/></center></h4>
+                                <h4>BART<center><hr className="d-flex text-center" style={{maxWidth: "50%"}}/></center></h4>
                                 <h5 style={{color: "#FF4500"}}>Bidirectional Auto-Regressive Transformers</h5>
                             </div>
                             <div className="row">
@@ -164,7 +164,7 @@ function About() {
                             </div>
 
                             <div className="row text-center pt-5">
-                                <h4>T5<center><hr classname="d-flex text-center" style={{'max-width': "50%"}}/></center></h4>
+                                <h4>T5<center><hr className="d-flex text-center" style={{maxWidth: "50%"}}/></center></h4>
                                 <h5 style={{color: "#FF4500"}}>Text-to-Text Transfer Transformer</h5>
                             </div>
                             <div className="row">

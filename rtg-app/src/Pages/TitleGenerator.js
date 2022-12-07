@@ -4,6 +4,8 @@ import copy from "copy-to-clipboard";
 import { Toast } from 'bootstrap';
 import IconV3 from "../Images/IconV3.png";
 import { Oval } from 'react-loader-spinner';
+import { Offcanvas } from 'bootstrap';
+
 
 function TitleGenerator({post, setPost}) {
 
@@ -23,6 +25,11 @@ function TitleGenerator({post, setPost}) {
         toast.show()
       })
     }
+
+    // added to fix bug in data-bs-modal in console output
+    document.addEventListener('DOMContentLoaded', function () {
+        const bsOffcanvas = new Offcanvas('#offcanvasNav');
+    });
 
     // sets copyText State to selected title
     const handleCopyText = (e) => {

@@ -3,13 +3,13 @@ function Team() {
 
     return (
         <div className="container-fluid page pb-5">
-            <div class="container" >
+            <div className="container" >
                 
-                <div class="row">
-                    <h2 class="py-5">About the team</h2>
+                <div className="row">
+                    <h2 className="py-5">About the team</h2>
                 </div>
 
-                <div class="row">
+                <div className="row">
                     <h5>Members</h5>
                 </div>
                 
