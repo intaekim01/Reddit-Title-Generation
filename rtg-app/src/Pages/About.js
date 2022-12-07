@@ -29,7 +29,7 @@ function About() {
                             <div className="row">
                                 <h4 className="py-3">Why We Care</h4>
                                 <span className="align-text-top">
-                                    Now, Why do we care about irrelevant or ineffective titles? Reddit is structured such that content is socially curated 
+                                    Now, why do we care about irrelevant or ineffective titles? Reddit is structured such that content is socially curated 
                                     and promoted by site members through engagement, specifically through their voting system. The average monthly content-driven 
                                     reddit posts is approximately 2 million, so close to a million posts won`t get the engagement they`re looking for due to "bad" 
                                     titles. However with optimized titles, not only do content creators benefit through increased engagement on their posts, the 
@@ -74,7 +74,7 @@ function About() {
                     <div className="row py-5">
                         <div className="col-sm-12 col-md-6">
                             <div className="row px-md-5">
-                                <h4>Bad Title Examples</h4>
+                                <h4>Ineffective Titles</h4>
                                 <p>
                                     We gathered reddit data for posts that were generated in 2021 and analyzed millions of records. 
                                     The results of that analysis showed about 45% of all legitmate reddit posts had either sub-optimal title lengths, 
@@ -136,20 +136,20 @@ function About() {
                         <div className="col-sm-12 col-md-6">
                             <div className="row px-md-5">
                                 <h4>How It Works</h4>
-                                <p>Our title generator is powered by two state-of-the-art natural language models: Bart & T5</p>
+                                <p>Our title generator is powered by two state-of-the-art natural language models: BART & T5</p>
                                 <p>
-                                    Seq-to-seq architecture which uses a bidirectional encoder (BERT) and left-to-right decoder (GPT).
-                                    BART employs a diverse set of tasks where the model attempts to generate the correct output
-                                    sequence from scrambled and masked text,  forces the model to understand the entire context 
-                                    of an input sequence, and is useful therefore extremely useful for the summarization task
+                                    BART is a seq-to-seq architecture which uses a bidirectional encoder (BERT) and left-to-right decoder (GPT).
+                                    BART utilizes a diverse set of training tasks where the model attempts to generate the correct output
+                                    sequence from scrambled and masked text, which forces the model to understand the entire context 
+                                    of an input sequence. This context awareness is particularly useful for the summarization task.
                                 </p>
                                 <p>T5: Utilizes transfer learning, which is when a model trained on a singular general task is used for another related task</p>
                                 <div className="">
                                     <h5>Data Sources</h5>
-                                    <p>The data used in our training and testing datasets compose raw re  ddit data, 
+                                    <p>The data used in our training and testing datasets compose raw reddit data, 
                                         which was extracted from a group of individuals at Pushshift.io(link?) using the Python Reddit API Wrapper (PRAW). 
-                                        The raw data contained posts that were not in-scope towards our goal; in order to obtain content-driven reddit posts,
-                                        the data was cleansed to ensure only the most optimal data was used for training and testing purpopses.</p>
+                                        As the raw data contained title-post pairs that were not beneficial for capturing effective title characteristics,
+                                        the data was cleansed to ensure only the most optimal examples of effective titles were used for training and testing purposes.</p>
                                 </div>
                             </div>
                         </div>
