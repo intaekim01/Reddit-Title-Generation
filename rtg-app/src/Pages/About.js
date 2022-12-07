@@ -1,6 +1,7 @@
 import BARTimg from "../Images/BARTimg.png";
 import example1 from "../Images/example1.png";
 import example2 from "../Images/example2.png";
+import example3 from "../Images/example3.png";
 import t5 from "../Images/t5.gif";
 
 function About() {
@@ -80,8 +81,8 @@ function About() {
                                     The results of that analysis showed about 45% of all legitmate reddit posts had either sub-optimal title lengths, 
                                     irrelevant title content, and/or obvious ineffective titles. For title and headline generation, research has shown there 
                                     is an ideal title length and even a recommended range. Reddit titles we found that were less than three words long or 
-                                    over twenty-five words were identified as having sub-optimale title lengths. Titles were deemed irrelevant if 
-                                    their cosine similarty score between the post and the title fell below a 0.1. And lastly, reddit titles that 
+                                    over twenty-five words were identified as having sub-optimal title lengths. Titles were deemed irrelevant if 
+                                    their cosine similarty score between the post and the title fell below 0.1. And lastly, reddit titles that 
                                     were just copies of the post were considered ineffective titles. The images here show examples of each type of "bad" title.
                                 </p>
                             </div>
@@ -108,7 +109,7 @@ function About() {
                                         </div>
                                     </div>
                                     <div className="carousel-item">
-                                        <img className="example1.png d-block w-100" src={example1} width="100%" height="100%" alt="..."/>
+                                        <img className="example3.png d-block w-100" src={example3} width="100%" height="100%" alt="..."/>
                                         <div className="carousel-caption d-none d-md-block">
                                             <h5 style={{color: "#FF4500"}}>ineffective titles</h5>
                                         </div>
