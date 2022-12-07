@@ -117,7 +117,7 @@ function TitleGenerator({post, setPost}) {
 
                 <div className='row'>
                     <div>
-                        <p>Paste your post</p>
+                        <p>Enter your post</p>
                         <hr></hr>
                     </div>
                     <div className=''>
