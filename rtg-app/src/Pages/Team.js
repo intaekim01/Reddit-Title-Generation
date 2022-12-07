@@ -9,7 +9,7 @@ function Team() {
 
         <div className="container-fluid text-center page pb-5">
 
-            <div className="container">
+            <div className="container pb-5">
                 <div className="row">
                     <h2 className="pt-5">The Development Team</h2>
                 </div>
@@ -77,7 +77,7 @@ function Team() {
                             </div>
                             <div className="row">
                                 <span>Contact: aliviny@berkeley.edu</span>
-                                <span>Employment: </span>
+                                <span>Employment: Lead Data Analyst, PHC</span>
                             </div>
                         </div>
                     </div>
