@@ -30,3 +30,36 @@
   border-color: #E53900 !important;
   color: white !important;
 }
+
+@media screen and (max-width: 600px) {
+  .arrow {
+    display:none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hide-display{
+    display:none !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .unhide-display {
+    display: none;
+  }
+}
+
+.arrow {
+  max-height: 250px;
+  max-width: 450px;
+}
+
+.steps {
+  height: auto;
+  max-width: 100%;
+}
+
+.custom-background {
+  background: linear-gradient(90deg, #DAE0E6 50%, white 50%);
+}
+
