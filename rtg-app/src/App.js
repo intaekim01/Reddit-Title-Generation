@@ -22,7 +22,7 @@ function App() {
         <Route path='/title_generator' element={<TitleGenerator post={post} setPost={setPost}/>} />
         <Route path='/about' element={<About />} />
         <Route path='/team' element={<Team />} />
-        <Route path='/coming_soon' element={<ComingSoon />} />
+        {/* <Route path='/coming_soon' element={<ComingSoon />} /> */}
       </Routes>
       <Footer></Footer>
     </>

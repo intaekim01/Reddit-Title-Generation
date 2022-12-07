@@ -2,7 +2,7 @@ import React from "react";
 import logoV3 from "../Images/logoV4.png";
 import { Link } from 'react-router-dom';
 
-function Navbar() {
+function Footer() {
 
     return (
         <div className="container-fluid py-5" style={{backgroundColor: "#536879"}}>
@@ -23,9 +23,9 @@ function Navbar() {
                             <li className="nav-item">
                                 <Link className="nav-link" to="/team">Team</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/coming_soon">Coming Soon</Link>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                     <div className="col-sm-12 col-md-4 text-center">
@@ -43,4 +43,4 @@ function Navbar() {
 
 };
 
-export default Navbar
+export default Footer
